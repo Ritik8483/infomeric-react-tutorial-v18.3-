@@ -14,9 +14,11 @@ import ControlledComponent from "./hooks/controlledComponent";
 import UncontrolledComponent from "./hooks/unControlledComponent";
 import PureComponent from "./hooks/PureComponent";
 import UseFormStatus from "./hooks/useFormStatus";
+import ImpureComponent from "./hooks/impureComponent";
+import Debouncing from "./components/Debouncing";
+import Throttling from "./components/Throttling";
 
 function App() {
-
   return (
     <>
       {/* <UseState/> */}
@@ -26,11 +28,14 @@ function App() {
       {/* <Component1 />    Create -> Provider ->value */}
       {/* <UseMemo/> */}
       {/* <UseCallbackParent/> */}
-      <CustomHook/>
+      {/* <CustomHook/> */}
       {/* <ControlledComponent/> */}
       {/* <UncontrolledComponent/> */}
       {/* <PureComponent/> */}
+      {/* <ImpureComponent/> */}
       {/* <UseFormStatus/> */}
+      {/* <Debouncing /> */}
+      <Throttling/>
     </>
   );
 }
