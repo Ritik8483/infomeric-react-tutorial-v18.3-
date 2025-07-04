@@ -100,63 +100,148 @@
 
 // -----------------------------------------------------------------------------------------------
 
+// import React, { useState } from "react";
+
+// const UseState = () => {
+//   // const [count, setCount] = useState(0);
+//   const [staleCount, setStaleCount] = useState(0);
+
+//   // const handleStaleCount = () => {
+//   //   setStaleCount((prev) => prev + 1);
+//   //   setStaleCount((prev) => prev + 1);
+//   //   setStaleCount((prev) => prev + 1);
+//   // };
+
+//   // const handleCount = () => {
+//   //   setCount(count + 1);
+//   //   setCount(count + 1);
+//   //   setCount(count + 1);
+//   // };
+
+//   const handleStaleIncrement = () => {
+//     setTimeout(() => {
+//       setStaleCount(staleCount + 1);
+//     }, 1000);
+
+//     // setTimeout(() => {
+//     //   setStaleCount((prev) => prev + 1);
+//     // }, 2000);
+//   };
+
+//   // const handleStaleIncrement = () => {
+//   //   setTimeout(() => {        //React captured count = 0 at the time of clicking, not after the delay.
+//   //     setStaleCount(count + 1); // ❌ This may not reflect the latest state
+//   //   }, 2000);
+//     // setTimeout(() => {
+//     //   setStaleCount((prev) => prev + 1); // ✅ Always gets the latest state
+//     // }, 2000);
+//   // };
+
+//   return (
+//     <>
+//       <h4>Count : {staleCount}</h4>
+//       {/* <p>Stale Count : {staleCount}</p> */}
+//       <button onClick={handleStaleIncrement}>Increment After 2s</button>
+
+//       {/* <button onClick={handleCount}>Increment Count</button>
+//       <button onClick={handleStaleCount}>Increment Stale Count</button> */}
+
+//       {/* <button onClick={() => setCount((prev)=>prev+1)}>Increment</button> */}
+
+//       {/* <button onClick={() => setCount(count + 1)}>Increment</button> */}
+//       {/* <button onClick={() => setCount(count - 1)}>Decrement</button> */}
+//     </>
+//   );
+// };
+
+// export default UseState;
+
+// ------------------------------------------------------------------------------------------
+
+// import React, { useState } from "react";
+
+// const UseState = () => {
+//   const [count, setCount] = useState(0);
+
+//   console.log("count", count);
+
+//   const handleCount = () => {
+//     // setCount(count + 1);
+//     // setCount(count + 1);
+//     // setCount(count + 1);
+//     setCount((prev) => prev + 1);
+//     setCount((prev) => prev + 1);
+//     setCount((prev) => prev + 1);
+//   };
+
+//   // const handleStaleIncrement=()=>{
+//   //   // setTimeout(() => {
+//   //   //   setCount(count + 1)
+//   //   // }, 1000);
+
+//   //    setTimeout(() => {
+//   //     setCount((prev)=>prev + 1)
+//   //   }, 1000);
+//   // }
+
+//   const handleStaleIncrement = () => {
+//     // setTimeout(() => {
+//     //   //React captured count = 0 at the time of clicking, not after the delay.
+//     //   setCount(count + 1); // ❌ This may not reflect the latest state
+//     // }, 2000);
+//     setTimeout(() => {
+//       setCount((prev) => prev + 1); // ✅ Always gets the latest state
+//                       //clicking 2-3 times give added values after 2 sec
+//     }, 2000);
+//   };
+
+//   return (
+//     <>
+//       <h2>Count : {count}</h2>
+//       <button onClick={handleCount}>Add</button>
+//       <button onClick={handleStaleIncrement}>Increment After 2s</button>
+//     </>
+//   );
+// };
+
+// export default UseState;
+
+// --------------------------------------
+
 import React, { useState } from "react";
 
 const UseState = () => {
-  // const [count, setCount] = useState(0);
-  const [staleCount, setStaleCount] = useState(0);
+  const [count, setCount] = useState(0);
 
-  // const handleStaleCount = () => {
-  //   setStaleCount((prev) => prev + 1);
-  //   setStaleCount((prev) => prev + 1);
-  //   setStaleCount((prev) => prev + 1);
-  // };
+  const handleCount = () => {
+    // setCount(count+1)
+    // setCount(count+1)
+    // setCount(count+1)
 
-  // const handleCount = () => {
-  //   setCount(count + 1);
-  //   setCount(count + 1);
-  //   setCount(count + 1);
-  // };
-
-  const handleStaleIncrement = () => {
-    setTimeout(() => {
-      setStaleCount(staleCount + 1);
-    }, 1000);
-
-    // setTimeout(() => {
-    //   setStaleCount((prev) => prev + 1);
-    // }, 2000);
+    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
+    setCount((prev) => prev + 1);
   };
 
-  // const handleStaleIncrement = () => {
-  //   setTimeout(() => {        //React captured count = 0 at the time of clicking, not after the delay.
-  //     setStaleCount(count + 1); // ❌ This may not reflect the latest state
-  //   }, 2000);
+  const handleStaleCount = () => {
     // setTimeout(() => {
-    //   setStaleCount((prev) => prev + 1); // ✅ Always gets the latest state
+    //   setCount(count + 1);
     // }, 2000);
-  // };
 
+    setTimeout(() => {
+      setCount((prev) => prev + 1);
+    }, 2000);
+  };
   return (
     <>
-      <h4>Count : {staleCount}</h4>
-      {/* <p>Stale Count : {staleCount}</p> */}
-      <button onClick={handleStaleIncrement}>Increment After 2s</button>
-
-      {/* <button onClick={handleCount}>Increment Count</button>
-      <button onClick={handleStaleCount}>Increment Stale Count</button> */}
-
-      {/* <button onClick={() => setCount((prev)=>prev+1)}>Increment</button> */}
-
-      {/* <button onClick={() => setCount(count + 1)}>Increment</button> */}
-      {/* <button onClick={() => setCount(count - 1)}>Decrement</button> */}
+      {count}
+      {/* <button onClick={handleCount} >Count</button> */}
+      <button onClick={handleStaleCount}>Stale Increement</button>
     </>
   );
 };
 
 export default UseState;
-
-// ------------------------------------------------------------------------------------------
 
 // React batches state updates, and if multiple updates happen
 //  in quick succession, count might not be the latest value which leads to stale state issues.
@@ -165,5 +250,4 @@ export default UseState;
 // Because React might have updated the state after this function was defined, but the function is still referring to the old value of count
 // ((prev) => prev + 1) = Uses the latest state at the time of execution
 // React passes the most up-to-date state to the function (prev) — even if this call happens later.
-
 // If you update multiple states in a single function, React waits and applies them together in one render cycle.

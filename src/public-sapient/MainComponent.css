@@ -1,0 +1,19 @@
+.box{
+    border: 1px solid red;
+}
+
+.pokemon-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 16px;
+  padding: 16px;
+  width: max-content;
+  padding: 20px;
+}
+
+
+.pokimon-box{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}

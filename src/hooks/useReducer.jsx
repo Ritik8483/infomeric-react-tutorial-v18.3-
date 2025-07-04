@@ -34,36 +34,108 @@
 
 // -------------------------------------------------
 
-import React from "react";
-import { useReducer } from "react";
+// import React from "react";
+// import { useReducer } from "react";
+
+// const initialState = 0;
+
+// const UseReducer = () => {
+//   const reducer = (state, action) => {
+//     switch (action) {
+//       case "INCREMENT":
+//         return state + 1;
+//         break;
+//       case "DECREMENT":
+//         return state - 1;
+//         break;
+//       case "Initial":
+//         return initialState;
+//         break;
+//       default:
+//         return 0;
+//         break;
+//     }
+//   };
+
+//   const [count, dispatch] = useReducer(reducer, initialState);
+//   return (
+//     <>
+//       <h2>{count}</h2>
+//       <button onClick={() => dispatch("INCREMENT")}>Increment</button>
+//       <button onClick={() => dispatch("DECREMENT")}>Decrement</button>
+//       <button onClick={() => dispatch("Initial")}>Initail State</button>
+//     </>
+//   );
+// };
+
+// export default UseReducer;
+
+// -----------------------------------------------------------------------
+
+// import React, { useReducer } from "react";
+
+// const initailState = 0;
+// const UseReducer = () => {
+//   const reducer = (state, action) => {
+//     switch (action) {
+//       case "Increment":
+//         return state + 1;
+//         break;
+//       case "Decrement":
+//         return state - 1;
+//         break;
+//       case "Reset":
+//         return initailState;
+//         break;
+//       default:
+//         return initailState;
+//         break;
+//     }
+//   };
+
+//   const [state, dispatch] = useReducer(reducer, initailState);
+
+//   return (
+//     <>
+//       <p> Count : {state}</p>
+//       <button onClick={() => dispatch("Increment")}>Increment</button>
+//       <button onClick={() => dispatch("Decrement")}>Decrement</button>
+//       <button onClick={() => dispatch("Reset")}>Reset</button>
+//     </>
+//   );
+// };
+
+// export default UseReducer;
+
+// ------------------------------------------
+
+import React, { useReducer } from "react";
 
 const initialState = 0;
-
 const UseReducer = () => {
   const reducer = (state, action) => {
     switch (action) {
-      case "INCREMENT":
+      case "Increment":
         return state + 1;
         break;
-      case "DECREMENT":
+      case "Decrement":
         return state - 1;
         break;
-      case "Initial":
+      case "Reset":
         return initialState;
         break;
       default:
-        return 0;
+        return initialState;
         break;
     }
   };
-
-  const [count, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
-      <h2>{count}</h2>
-      <button onClick={() => dispatch("INCREMENT")}>Increment</button>
-      <button onClick={() => dispatch("DECREMENT")}>Decrement</button>
-      <button onClick={() => dispatch("Initial")}>Initail State</button>
+      {state}
+      <button onClick={() => dispatch("Increment")}>Start</button>
+      <button onClick={() => dispatch("Decrement")}>Stop</button>
+      <button onClick={() => dispatch("Reset")}>Reset</button>
     </>
   );
 };

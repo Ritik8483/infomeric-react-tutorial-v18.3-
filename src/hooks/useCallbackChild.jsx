@@ -10,17 +10,51 @@
 
 // ---------------------------------------------------------------------------------------
 
-import React, { memo } from "react";
+// import React, { memo } from "react";
 
-const UseCallbackChild = ({ addToDos }) => {
-  console.log("called Child Component");
+// const UseCallbackChild = ({ addToDos }) => {
+//   console.log("called Child Component");
+
+//   return (
+//     <>
+//       <button onClick={addToDos} >AddToDos</button>
+//     </>
+//   );
+// };
+
+// export default memo(UseCallbackChild);
+// // export default UseCallbackChild;
+
+// ------------------------------------------------------------------------------
+
+// import React, { memo } from "react";
+
+// const UseCallbackChild = ({ addToDos }) => {
+//   console.log("called");
+  
+//   return (
+//     <>
+//       <button onClick={addToDos}>Add Todos</button>
+//     </>
+//   );
+// };
+
+// export default memo(UseCallbackChild);
+
+
+
+// ----------------------------
+
+import React, { memo } from 'react'
+
+const UseCallbackChild = ({handleAddTodo}) => {
+  console.log("calledChild");
   
   return (
     <>
-      <button onClick={addToDos} >AddToDos</button>
+      <button onClick={handleAddTodo}>Add Todos</button>
     </>
-  );
-};
+  )
+}
 
-export default memo(UseCallbackChild);
-// export default UseCallbackChild;
+export default memo(UseCallbackChild)
