@@ -55,18 +55,39 @@
 
 
 // -------------------------------------
+// import React, { useContext } from 'react'
+// import { createTextContext } from './Component1'
+
+// const Component5 = () => {
+//   const Text = useContext(createTextContext)
+//   console.log("Text",Text);
+  
+//   return (
+//     <div>
+//       Component5
+//       <h1>{Text}</h1>
+//       </div>
+//   )
+// }
+
+// export default Component5
+
+
+
+
+// ----------------------------------------
+
 import React, { useContext } from 'react'
-import { createTextContext } from './Component1'
+import { createCompContext } from './Component1'
 
 const Component5 = () => {
-  const Text = useContext(createTextContext)
-  console.log("Text",Text);
+  const useCompContext = useContext(createCompContext)
+  console.log("useCompContext",useCompContext);
   
   return (
-    <div>
-      Component5
-      <h1>{Text}</h1>
-      </div>
+    <div>Component5
+      <h2>{useCompContext}</h2>
+    </div>
   )
 }
 

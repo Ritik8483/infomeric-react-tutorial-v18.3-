@@ -100,36 +100,67 @@
 
 // ----------------------------------------
 
+// import React, { useCallback, useState } from "react";
+// import UseCallbackChild from "./useCallbackChild";
+
+// const UseCallback = () => {
+//   const [count, setCount] = useState(0);
+//   const [todos, setToDos] = useState([]);
+
+//   // const handleAddTodo = () => {
+//   //   console.log("callled");
+//   //   setToDos((prev) => {
+//   //     return [...prev, "Add Todo"];
+//   //   });
+//   // };
+
+//   const handleAddTodo = useCallback(() => {
+//     console.log("callled");
+//     setToDos((prev) => {
+//       return [...prev, "Add Todo"];
+//     });
+//   }, [todos]);
+
+//   return (
+//     <>
+//       <h4>Count : {count}</h4>
+//       <button onClick={() => setCount((prev) => prev + 1)}>Count</button>
+//       {/* <button onClick={handleAddTodo}>Add Todos</button> */}
+//       {todos.map((item, index) => (
+//         <p key={item + index}>{item}</p>
+//       ))}
+
+//       <UseCallbackChild handleAddTodo={handleAddTodo} />
+//     </>
+//   );
+// };
+
+// export default UseCallback;
+
 import React, { useCallback, useState } from "react";
 import UseCallbackChild from "./useCallbackChild";
 
 const UseCallback = () => {
   const [count, setCount] = useState(0);
-  const [todos, setToDos] = useState([]);
+  const [addToDo, setAddToDo] = useState([]);
 
-  // const handleAddTodo = () => {
-  //   console.log("callled");
-  //   setToDos((prev) => {
-  //     return [...prev, "Add Todo"];
-  //   });
-  // };
+  const handleAddTodo = () => {
+    console.log("called");
+    setAddToDo((prev) => [...prev, "Add Todo"]);
+  };
 
-  const handleAddTodo = useCallback(() => {
-    console.log("callled");
-    setToDos((prev) => {
-      return [...prev, "Add Todo"];
-    });
-  }, [todos]);
+  // const handleAddTodo = useCallback(() => {
+  //   console.log("called");
+  //   setAddToDo((prev) => [...prev, "Add Todo"]);
+  // }, [addToDo]);
 
   return (
     <>
-      <h4>Count : {count}</h4>
-      <button onClick={() => setCount((prev) => prev + 1)}>Count</button>
-      {/* <button onClick={handleAddTodo}>Add Todos</button> */}
-      {todos.map((item, index) => (
+      <h1>Count : {count}</h1>
+      <button onClick={() => setCount(count + 1)}>Count</button>
+      {addToDo.map((item, index) => (
         <p key={item + index}>{item}</p>
       ))}
-
       <UseCallbackChild handleAddTodo={handleAddTodo} />
     </>
   );

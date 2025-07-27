@@ -109,6 +109,39 @@
 
 // ------------------------------------------
 
+// import React, { useReducer } from "react";
+
+// const initialState = 0;
+// const UseReducer = () => {
+//   const reducer = (state, action) => {
+//     switch (action) {
+//       case "Increment":
+//         return state + 1;
+//         break;
+//       case "Decrement":
+//         return state - 1;
+//         break;
+//       case "Reset":
+//         return initialState;
+//         break;
+//       default:
+//         return initialState;
+//         break;
+//     }
+//   };
+//   const [state, dispatch] = useReducer(reducer, initialState);
+//   return (
+//     <>
+//       {state}
+//       <button onClick={() => dispatch("Increment")}>Start</button>
+//       <button onClick={() => dispatch("Decrement")}>Stop</button>
+//       <button onClick={() => dispatch("Reset")}>Reset</button>
+//     </>
+//   );
+// };
+
+// export default UseReducer;
+
 import React, { useReducer } from "react";
 
 const initialState = 0;
@@ -125,16 +158,15 @@ const UseReducer = () => {
         return initialState;
         break;
       default:
-        return initialState;
         break;
     }
   };
   const [state, dispatch] = useReducer(reducer, initialState);
   return (
     <>
-      {state}
-      <button onClick={() => dispatch("Increment")}>Start</button>
-      <button onClick={() => dispatch("Decrement")}>Stop</button>
+      <h2>Count : {state}</h2>
+      <button onClick={() => dispatch("Increment")}>Increment</button>
+      <button onClick={() => dispatch("Decrement")}>Decrement</button>
       <button onClick={() => dispatch("Reset")}>Reset</button>
     </>
   );

@@ -52,15 +52,30 @@
 
 // ----------------
 
+// import React from 'react'
+// import useFetch from './useFetch';
+
+// const url = 'https://jsonplaceholder.typicode.com/todos'
+// const CustomHooks = () => {
+//   const data = useFetch(url)
+  
+//   console.log("data",data);
+  
+//   return (
+//     <div>CustomHooks</div>
+//   )
+// }
+
+// export default CustomHooks
+
+
+
 import React from 'react'
 import useFetch from './useFetch';
 
-const url = 'https://jsonplaceholder.typicode.com/todos'
+const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 const CustomHooks = () => {
-  const data = useFetch(url)
-  
-  console.log("data",data);
-  
+  const data = useFetch(apiUrl)
   return (
     <div>CustomHooks</div>
   )

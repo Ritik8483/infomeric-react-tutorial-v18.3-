@@ -45,14 +45,30 @@
 
 // ----------------------------
 
+// import React, { memo } from 'react'
+
+// const UseCallbackChild = ({handleAddTodo}) => {
+//   console.log("calledChild");
+  
+//   return (
+//     <>
+//       <button onClick={handleAddTodo}>Add Todos</button>
+//     </>
+//   )
+// }
+
+// export default memo(UseCallbackChild)
+
+
+
 import React, { memo } from 'react'
 
 const UseCallbackChild = ({handleAddTodo}) => {
-  console.log("calledChild");
+  console.log("called");
   
   return (
     <>
-      <button onClick={handleAddTodo}>Add Todos</button>
+      <button onClick={handleAddTodo} >Add Todo</button>
     </>
   )
 }

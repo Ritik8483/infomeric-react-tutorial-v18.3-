@@ -37,7 +37,6 @@
 // }
 
 // --------------------------------------
-
 import React, { Component } from "react";
 
 export default class ClassBasedComponents extends Component {
@@ -55,22 +54,23 @@ export default class ClassBasedComponents extends Component {
     });
   };
 
-  handleToggle = (e) => {
+  handleClickChange = () => {
     this.setState((prev) => ({ toggle: !prev.toggle }));
   };
+
   render() {
     return (
-      <>
-        <p>{this.state.name}</p>
+      <div>
+        <p>ClassBasedComponents</p>
         <input
-          type="text"
-          placeholder="Name"
-          value={this.state.name}
           onChange={this.handleChange}
+          type="text"
+          placeholder="Enter Name"
+          name="name"
         />
-
-        <button onClick={this.handleToggle}>{this.state.toggle ? "Stop" : "Start"}</button>
-      </>
+        {this.state.toggle ? "Clicked" : "Not Clicked"}
+        <button onClick={this.handleClickChange}>Click Me!</button>
+      </div>
     );
   }
 }

@@ -116,43 +116,85 @@
 
 // ----------------------------------------------
 
+// import React, { useMemo, useState } from "react";
+
+// const UseMemo = () => {
+//   const [count, setCount] = useState(0);
+//   const [fact, setFact] = useState(1);
+
+//   // const handleFactorial = () => {
+//   //   console.log("called");
+
+//   //   let sum = 1;
+//   //   for (let i = 1; i <= fact; i++) {
+//   //     sum *= i;
+//   //   }
+
+//   //   return sum;
+//   // };
+
+//   const handleFactorial = useMemo(() => {
+//     console.log("called");
+
+//     let sum = 1;
+//     for (let i = 1; i <= fact; i++) {
+//       sum *= i;
+//     }
+
+//     return sum;
+//   }, [fact]);
+
+//   return (
+//     <>
+//       <h3>COUNT - {count}</h3>
+//       <button onClick={() => setCount((prev) => prev + 1)}>Count</button>
+//       <h3>
+//         FACT of {fact} {handleFactorial}
+//         {/* FACT of {fact} {handleFactorial()} */}
+//       </h3>
+//       <button onClick={() => setFact((prev) => prev + 1)}>Count</button>
+//     </>
+//   );
+// };
+
+// export default UseMemo;
+
 import React, { useMemo, useState } from "react";
 
 const UseMemo = () => {
-  const [count, setCount] = useState(0);
+  const [count, setcount] = useState(0);
   const [fact, setFact] = useState(1);
 
   // const handleFactorial = () => {
-  //   console.log("called");
+  // let factValue = 1;
+  // for (let i = 1; i <= fact; i++) {
+  //   factValue *= i;
+  // }
 
-  //   let sum = 1;
-  //   for (let i = 1; i <= fact; i++) {
-  //     sum *= i;
-  //   }
-
-  //   return sum;
+  // return factValue;
   // };
+  // console.log("handleFactorial", handleFactorial());
 
   const handleFactorial = useMemo(() => {
     console.log("called");
-
-    let sum = 1;
+    let factValue = 1;
     for (let i = 1; i <= fact; i++) {
-      sum *= i;
+      factValue *= i;
     }
 
-    return sum;
+    return factValue;
   }, [fact]);
 
   return (
     <>
-      <h3>COUNT - {count}</h3>
-      <button onClick={() => setCount((prev) => prev + 1)}>Count</button>
+      <h3>{count}</h3>
+      <button onClick={() => setcount((prev) => prev + 1)}>
+        Increase Count
+      </button>
       <h3>
-        FACT of {fact} {handleFactorial}
-        {/* FACT of {fact} {handleFactorial()} */}
+        Factorial of {fact} is {handleFactorial}
       </h3>
-      <button onClick={() => setFact((prev) => prev + 1)}>Count</button>
+      <button onClick={() => setFact((prev) => prev + 1)}>Factorial</button>
     </>
   );
 };

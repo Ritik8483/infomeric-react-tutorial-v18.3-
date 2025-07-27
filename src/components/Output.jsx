@@ -20,7 +20,7 @@ const Output = () => {
     console.log("resp", resp);
   }, []);
 
-  console.log("data", data);
+  console.log("data", data?.products);
 
   return (
     <>

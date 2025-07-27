@@ -50,7 +50,7 @@
 //   console.log("name",name);
 //   return (
 //     <>
-    
+
 //       <input
 //         type="text"
 //         value={name}
@@ -67,23 +67,45 @@
 
 // export default Component1;
 
-
 // -------------------------------------------------
 
-import React, { useState } from 'react'
-import Component2 from "./Component2";
-import { createContext } from 'react';
+// import React, { useState } from "react";
+// import Component2 from "./Component2";
+// import { createContext } from "react";
 
-export const createTextContext = createContext()
+// export const createTextContext = createContext();
+// const Component1 = () => {
+//   const [text, setText] = useState("");
+//   return (
+//     <>
+//       <div>Component1</div>
+//       <input
+//         type="text"
+//         value={text}
+//         onChange={(e) => setText(e.target.value)}
+//       />
+//       <createTextContext.Provider value={text}>
+//         <Component2 />
+//       </createTextContext.Provider>
+//     </>
+//   );
+// };
+
+// export default Component1;
+
+
+import React, { createContext, useState } from 'react'
+import Component2 from './Component2'
+
+export const createCompContext = createContext()
 const Component1 = () => {
-  const [text,setText] = useState("")
+  const [name,setName] = useState("")
   return (
     <>
-    <div>Component1</div>
-    <input type='text' value={text} onChange={(e)=>setText(e.target.value)} />
-    <createTextContext.Provider value={text} >
-    <Component2/>
-    </createTextContext.Provider>
+      <input type='text' name='Name' value={name} onChange={(e)=>setName(e.target.value)} placeholder='Enter your name' />
+      <createCompContext.Provider value={name} >
+        <Component2/>
+      </createCompContext.Provider>
     </>
   )
 }

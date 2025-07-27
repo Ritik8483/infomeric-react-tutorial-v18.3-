@@ -84,17 +84,37 @@
 
 // ---------------------------------------------
 
+// import React, { useEffect, useState } from "react";
+
+// const useFetch = (url) => {
+//   const [data, setData] = useState({});
+
+//   useEffect(() => {
+//     (async () => {
+//       try {
+//         const resp = await fetch(url);
+//         const json = await resp.json();
+//         setData(json);
+//       } catch (error) {
+//         console.log("error", error);
+//       }
+//     })();
+//   }, []);
+//   return data;
+// };
+
+// export default useFetch;
+
 import React, { useEffect, useState } from "react";
 
-const useFetch = (url) => {
-  const [data, setData] = useState({});
-
+const useFetch = (apiUrl) => {
+  const [data, setData] = useState([]);
   useEffect(() => {
     (async () => {
       try {
-        const resp = await fetch(url);
-        const json = await resp.json();
-        setData(json);
+        const resp = await fetch(apiUrl);
+        const respJson = await resp.json();
+        console.log("respJson", respJson);
       } catch (error) {
         console.log("error", error);
       }

@@ -33,18 +33,18 @@ import SecondComponent from "./public-sapient/SecondComponent.jsx";
 function App() {
   return (
     <>
-      <ClassBasedComponents/>
+      {/* <ClassBasedComponents/> */}
       {/* <HighOrderComponent />     */}
       {/* <Output /> */}
       {/* <UseState/> */}
       {/* <UseEffect /> */}
       {/* <UseRef/> */}
       {/* <UseReducer/>     {/*  (STDIRES)  Reducer is FN with parameters as SA */}
-      {/* <Component1 />          Create -> Provider ->value */}
+      {/* <Component1 />           Create -> Provider ->value */}
       {/* <UseMemo/> */}
       {/* <UseCallbackParent/> */}
       {/* <CustomHook/> */}
-      {/* <ControlledComponent/> */}
+      <ControlledComponent/>
       {/* <UncontrolledComponent/> */}
       {/* <PureComponent/> */}
       {/* <ImpureComponent/> */}

@@ -18,7 +18,7 @@
 //     setCount((prev) => prev + 1);
 //   };
 
-//here we are calling count state
+// // here we are calling count state
 // const handleStaleIncrement = () => {
 //   setTimeout(() => {        //React captured count = 0 at the time of clicking, not after the delay.
 //     setStaleCount(count + 1); // ❌ This may not reflect the latest state
@@ -208,40 +208,77 @@
 
 // --------------------------------------
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
+
+// const UseState = () => {
+//   const [count, setCount] = useState(0);
+
+//   const handleCount = () => {
+//     // setCount(count+1)
+//     // setCount(count+1)
+//     // setCount(count+1)
+
+//     setCount((prev) => prev + 1);
+//     setCount((prev) => prev + 1);
+//     setCount((prev) => prev + 1);
+//   };
+
+//   const handleStaleCount = () => {
+//     // setTimeout(() => {
+//     //   setCount(count + 1);
+//     // }, 2000);
+
+//     setTimeout(() => {
+//       setCount((prev) => prev + 1);
+//     }, 2000);
+//   };
+//   return (
+//     <>
+//       {count}
+//       {/* <button onClick={handleCount} >Count</button> */}
+//       <button onClick={handleStaleCount}>Stale Increement</button>
+//     </>
+//   );
+// };
+
+// export default UseState;
+
+
+import React, { useState } from 'react'
 
 const UseState = () => {
-  const [count, setCount] = useState(0);
+  const [name,setName] = useState("");
+  const [toggle,setToggle] = useState(false);
+  const [count,setCount] = useState(0);
 
-  const handleCount = () => {
-    // setCount(count+1)
-    // setCount(count+1)
-    // setCount(count+1)
+  const handleChange=(e)=>{
+    setName(e.target.value)
+  }
 
-    setCount((prev) => prev + 1);
-    setCount((prev) => prev + 1);
-    setCount((prev) => prev + 1);
-  };
+  const handleToggle=(e)=>{
+    setToggle(!toggle)
+  }
 
-  const handleStaleCount = () => {
-    // setTimeout(() => {
-    //   setCount(count + 1);
-    // }, 2000);
-
-    setTimeout(() => {
-      setCount((prev) => prev + 1);
-    }, 2000);
-  };
+  const handleCount = ()=>{
+    // setCount(count + 1)
+    // setCount(count + 1)
+    // setCount(count + 1)
+    setCount((prev)=>prev+1)
+    setCount((prev)=>prev+1)
+    setCount((prev)=>prev+1)
+  }
+    
   return (
     <>
-      {count}
-      {/* <button onClick={handleCount} >Count</button> */}
-      <button onClick={handleStaleCount}>Stale Increement</button>
+      {/* <h3>{toggle ? "True" : "Fasle"}</h3> */}
+      <h2>{count}</h2>
+      <input onChange={handleChange} type='text' placeholder='Enter name' value={name} />
+      <button onClick={handleCount} >Count</button>
     </>
-  );
-};
+  )
+}
 
-export default UseState;
+export default UseState
 
 // React batches state updates, and if multiple updates happen
 //  in quick succession, count might not be the latest value which leads to stale state issues.
